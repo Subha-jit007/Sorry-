@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>i'm sorry 🥺</title>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Caveat:wght@700&family=Nunito:wght@400;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: #fff0f5;
+  min-height: 100vh;
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content:'';
+  position: fixed; inset:0; z-index:0;
+  background-image:
+    radial-gradient(circle at 15% 20%, #ffb3c6 0%, transparent 28%),
+    radial-gradient(circle at 85% 70%, #ffd6e0 0%, transparent 32%);
+  pointer-events:none;
+}
+
+body::after {
+  content:'♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡';
+  position: fixed; inset:0; z-index:0;
+  font-size:1rem;
+  color: rgba(255,107,138,.1);
+  letter-spacing:2rem;
+  line-height:3.2rem;
+  word-break:break-all;
+  pointer-events:none;
+}
+
+.page { position:relative; z-index:1; max-width:400px; margin:0 auto; padding:28px 20px 56px; }
+
+/* ── LABEL ── */
+.label {
+  display:inline-block;
+  background:#ff6b8a;
+  color:white;
+  font-family:'Lilita One', cursive;
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  padding:5px 14px;
+  border-radius:4px;
+  transform: rotate(-2deg);
+  box-shadow: 3px 3px 0 #c9184a;
+  margin-bottom:10px;
+}
+
+/* ── BIG TITLE ── */
+.big-title {
+  font-family:'Lilita One', cursive;
+  font-size: clamp(3.4rem, 17vw, 5.2rem);
+  line-height:.92;
+  color:#1a0a14;
+}
+.big-title .outline {
+  display:block;
+  color: transparent;
+  -webkit-text-stroke: 3px #ff6b8a;
+  font-size: clamp(4.5rem, 22vw, 7rem);
+  letter-spacing:-.02em;
+  line-height:.9;
+}
+
+/* ── CHARACTERS ── */
+.chars {
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:12px;
+  margin: 32px 0 28px;
+}
+
+.pookie { display:flex; flex-direction:column; align-items:center; }
+
+/* HEAD */
+.head {
+  width:56px; height:56px;
+  border-radius:50%;
+  border:3px solid #1a0a14;
+  position:relative;
+  display:flex; align-items:center; justify-content:center;
+}
+.p1 .head { background:#ffccd5; }
+.p2 .head { background:#ffd6a5; }
+.p3 .head { background:#c3f584; }
+
+/* EARS */
+.head::before, .head::after {
+  content:'';
+  position:absolute; top:-13px;
+  width:17px; height:19px;
+  border-radius:50% 50% 0 0;
+  border:3px solid #1a0a14;
+  border-bottom:none;
+}
+.head::before { left:5px; }
+.head::after  { right:5px; }
+.p1 .head::before,.p1 .head::after { background:#ffb3c6; }
+.p2 .head::before,.p2 .head::after { background:#ffc48a; }
+.p3 .head::before,.p3 .head::after { background:#9ddb4f; }
+
+/* FACE */
+.face { display:flex; flex-direction:column; align-items:center; gap:3px; padding-top:6px; }
+.eyes { display:flex; gap:10px; }
+
+/* sad eyes — downward arcs */
+.eye {
+  width:11px; height:6px;
+  border-bottom:3px solid #1a0a14;
+  border-radius:0 0 10px 10px;
+  position:relative;
+}
+/* teardrop */
+.eye::after {
+  content:'';
+  position:absolute; bottom:-7px; left:50%; transform:translateX(-50%);
+  width:4px; height:6px;
+  background:#74c0fc;
+  border-radius:0 0 4px 4px;
+}
+
+/* sorry mouth (upside-down arc) */
+.mouth {
+  width:16px; height:8px;
+  border-top:3px solid #1a0a14;
+  border-radius:10px 10px 0 0;
+  margin-top:3px;
+}
+
+/* blush circles */
+.blush-l, .blush-r {
+  position:absolute; top:30px;
+  width:11px; height:6px;
+  border-radius:50%;
+  background:rgba(255,107,138,.33);
+}
+.blush-l { left:4px; }
+.blush-r { right:4px; }
+
+/* BODY */
+.body {
+  width:50px; height:40px;
+  border:3px solid #1a0a14;
+  border-top:none;
+  border-radius:0 0 16px 16px;
+  position:relative;
+  margin-top:-1px;
+}
+.p1 .body { background:#ff8fab; }
+.p2 .body { background:#ffa94d; }
+.p3 .body { background:#74c80a; }
+
+/* ARMS — raised in sorry/begging pose */
+.arm-l, .arm-r {
+  position:absolute;
+  width:11px; height:28px;
+  border:3px solid #1a0a14;
+  border-radius:6px;
+  top:-2px;
+}
+.p1 .arm-l,.p1 .arm-r { background:#ffccd5; }
+.p2 .arm-l,.p2 .arm-r { background:#ffd6a5; }
+.p3 .arm-l,.p3 .arm-r { background:#c3f584; }
+
+/* side chars: arms raised outward */
+.p1 .arm-l { left:-14px; transform:rotate(-42deg); transform-origin:bottom center; }
+.p1 .arm-r { right:-14px; transform:rotate(42deg);  transform-origin:bottom center; }
+.p3 .arm-l { left:-14px; transform:rotate(-42deg); transform-origin:bottom center; }
+.p3 .arm-r { right:-14px; transform:rotate(42deg);  transform-origin:bottom center; }
+
+/* center char: arms slightly raised (praying) */
+.p2 .arm-l { left:-14px; transform:rotate(-22deg); transform-origin:bottom center; }
+.p2 .arm-r { right:-14px; transform:rotate(22deg);  transform-origin:bottom center; }
+
+/* LEGS */
+.legs { display:flex; gap:8px; margin-top:-2px; }
+.leg {
+  width:14px; height:20px;
+  border:3px solid #1a0a14;
+  border-radius:0 0 7px 7px;
+}
+.p1 .leg { background:#ff8fab; }
+.p2 .leg { background:#ffa94d; }
+.p3 .leg { background:#74c80a; }
+
+/* FEET */
+.feet { display:flex; gap:5px; }
+.foot {
+  width:18px; height:9px;
+  border:3px solid #1a0a14;
+  border-radius:0 8px 8px 0;
+}
+.foot-l { border-radius:8px 0 0 8px; }
+.p1 .foot { background:#ffccd5; }
+.p2 .foot { background:#ffd6a5; }
+.p3 .foot { background:#c3f584; }
+
+/* SPEECH BUBBLE on center */
+.bubble-wrap { position:relative; margin-bottom:4px; }
+.bubble {
+  background:white;
+  border:3px solid #1a0a14;
+  border-radius:12px;
+  padding:5px 10px;
+  font-family:'Caveat',cursive;
+  font-size:.95rem;
+  font-weight:700;
+  color:#c9184a;
+  white-space:nowrap;
+  box-shadow:3px 3px 0 #1a0a14;
+  position:relative;
+}
+.bubble::after {
+  content:'';
+  position:absolute;
+  bottom:-11px; left:50%; transform:translateX(-50%);
+  border-left:8px solid transparent;
+  border-right:8px solid transparent;
+  border-top:11px solid #1a0a14;
+}
+.bubble::before {
+  content:'';
+  position:absolute;
+  bottom:-7px; left:50%; transform:translateX(-50%);
+  border-left:6px solid transparent;
+  border-right:6px solid transparent;
+  border-top:8px solid white;
+  z-index:1;
+}
+
+/* ── MESSAGE CARDS ── */
+.card {
+  background:white;
+  border:3px solid #1a0a14;
+  border-radius:18px;
+  padding:20px 18px;
+  box-shadow: 5px 5px 0 #ff6b8a, 8px 8px 0 #1a0a14;
+  margin-bottom:18px;
+  position:relative;
+}
+.card-num {
+  position:absolute;
+  top:-13px; left:16px;
+  font-family:'Lilita One',cursive;
+  font-size:1.3rem;
+  background:#1a0a14;
+  color:white;
+  padding:0 8px;
+  border-radius:6px;
+  line-height:1.65;
+}
+.card p {
+  font-family:'Caveat',cursive;
+  font-size:1.22rem;
+  line-height:1.65;
+  color:#1a0a14;
+  font-weight:700;
+}
+
+/* ── DIVIDER ── */
+.zag {
+  text-align:center;
+  color:#ff6b8a;
+  font-family:'Lilita One',cursive;
+  letter-spacing:.3rem;
+  font-size:1.1rem;
+  margin:4px 0 18px;
+}
+
+/* ── BUTTON ── */
+.btn-wrap { text-align:center; margin-top:26px; }
+.btn-wrap > p {
+  font-family:'Caveat',cursive;
+  font-size:1.05rem;
+  font-weight:700;
+  color:#aaa;
+  margin-bottom:12px;
+}
+.btn {
+  background:#1a0a14;
+  color:#fff0f5;
+  border:none;
+  font-family:'Lilita One',cursive;
+  font-size:1.2rem;
+  padding:14px 34px;
+  border-radius:50px;
+  cursor:pointer;
+  box-shadow:4px 4px 0 #ff6b8a;
+  transition:transform .1s, box-shadow .1s;
+}
+.btn:active { transform:translate(3px,3px); box-shadow:1px 1px 0 #ff6b8a; }
+
+.yes-msg {
+  display:none;
+  font-family:'Lilita One',cursive;
+  font-size:1.9rem;
+  color:#ff6b8a;
+  -webkit-text-stroke:1.5px #1a0a14;
+  margin-top:16px;
+  line-height:1.3;
+}
+
+/* ── FOOTER ── */
+.footer {
+  text-align:center;
+  margin-top:38px;
+  font-family:'Caveat',cursive;
+  font-size:.95rem;
+  color:rgba(26,10,20,.35);
+  font-weight:700;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <span class="label">⚠️ urgent message ⚠️</span>
+
+  <div class="big-title">
+    i'm<br>
+    <span class="outline">SORRY</span>
+  </div>
+
+  <!-- Characters row -->
+  <div class="chars">
+
+    <!-- Left pookie -->
+    <div class="pookie p1">
+      <div class="head">
+        <div class="blush-l"></div><div class="blush-r"></div>
+        <div class="face">
+          <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
+          <div class="mouth"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="arm-l"></div>
+        <div class="arm-r"></div>
+      </div>
+      <div class="legs"><div class="leg"></div><div class="leg"></div></div>
+      <div class="feet"><div class="foot foot-l"></div><div class="foot foot-r"></div></div>
+    </div>
+
+    <!-- Center pookie (with bubble) -->
+    <div class="pookie p2" style="margin-bottom:6px;">
+      <div class="bubble-wrap">
+        <div class="bubble">pls forgive me!! 🙏</div>
+      </div>
+      <div class="head">
+        <div class="blush-l"></div><div class="blush-r"></div>
+        <div class="face">
+          <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
+          <div class="mouth"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="arm-l"></div>
+        <div class="arm-r"></div>
+      </div>
+      <div class="legs"><div class="leg"></div><div class="leg"></div></div>
+      <div class="feet"><div class="foot foot-l"></div><div class="foot foot-r"></div></div>
+    </div>
+
+    <!-- Right pookie -->
+    <div class="pookie p3">
+      <div class="head">
+        <div class="blush-l"></div><div class="blush-r"></div>
+        <div class="face">
+          <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
+          <div class="mouth"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="arm-l"></div>
+        <div class="arm-r"></div>
+      </div>
+      <div class="legs"><div class="leg"></div><div class="leg"></div></div>
+      <div class="feet"><div class="foot foot-l"></div><div class="foot foot-r"></div></div>
+    </div>
+
+  </div>
+
+  <!-- Message cards -->
+  <div class="card">
+    <span class="card-num">01</span>
+    <p>okay okay i knowww i messed up 🥺💔 but pls don't be mad at me i literally cannot function when you're upset with me… my heart does this sad lil flop thing and i hate it 😭</p>
+  </div>
+
+  <div class="zag">★ ✦ ★ ✦ ★</div>
+
+  <div class="card">
+    <span class="card-num">02</span>
+    <p>you mean EVERYTHING to me and i'd rather fight the whole world than fight with you 💞 i'm sorry okay?? like genuinely super duper sorry. can we go back to being us?? plsplspls 🙏🫶</p>
+  </div>
+
+  <!-- Forgive button -->
+  <div class="btn-wrap">
+    <p>so… are we okay now? 👀</p>
+    <button class="btn" onclick="forgive()">yes i forgive you 💕</button>
+    <div class="yes-msg" id="yes">YAYYYY!! 🎉<br>i love you so much!! 🩷</div>
+  </div>
+
+  <div class="footer">made with 🩷 by your dumb pookie</div>
+
+</div>
+<script>
+function forgive(){
+  document.querySelector('.btn').style.display='none';
+  document.querySelector('.btn-wrap > p').style.display='none';
+  document.getElementById('yes').style.display='block';
+}
+</script>
+</body>
+</html>
